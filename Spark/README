@@ -1,0 +1,5 @@
+This is the code for multiple linear regression. The instructions are fairly straightforward
+To Run:
+spark-submit multiLinearRegression.py /path/to/input/files/on/hdfs
+This code was run on cloudera since it was a small dataset
+

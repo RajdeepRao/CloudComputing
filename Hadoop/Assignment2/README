@@ -1,0 +1,39 @@
+Name: Rajdeep Rao
+Email: rrao6@uncc.edu
+
+I have used cloudera to implement this assignment.
+
+The submission contains 4 .java files. 
+-DocWordCount.java
+-TermFrequency.java
+-TFIDF.java
+-Search.java
+
+Instructions to execute the codes (Same as the instructions in the cloudera wordcount tutorial):
+
+mkdir -p build
+javac -cp /usr/lib/hadoop/*:/usr/lib/hadoop-mapreduce/* <File_name>.java -d build -Xlint 
+jar -cvf <jar_name>.jar -C build/ .
+hadoop jar <jar_name>.jar org.myorg.<File_name> /user/cloudera/wordcount/input /user/cloudera/wordcount/output 
+
+Step by step execution instructions for chaining jobs (TFIDF):
+mkdir build2
+javac -cp /usr/lib/hadoop/*:/usr/lib/hadoop-mapreduce/* TFIDF.java TermFrequency.java -d build -Xlint
+jar -cvf <jar_name>.jar -C build2/ .
+hadoop jar <jar_name>.jar org.myorg.<File_name> /user/cloudera/wordcount/input /user/cloudera/wordcount/outputTFIDF 
+
+The input files I have used are the following as per the  instruction in assignment "The output from running DocWordCount.java, TermFrequency.java, and TFIDF.java on the text files of the Canterbury corpus" :
+
+-alic29.txt
+-asyoulik.txt
+-Icet10.txt
+-plrabn12.txt
+
+The output files (.out) are corresponding to those input files.
+
+*PLEASE NOTE*:
+I have used /user/cloudera/interim_path and /user/cloudera/tfidf_path as intermediate storage paths, 
+so should you need to re run the jar, please delete these folders before re-running them with:
+hadoop fs -rm -r -f /user/cloudera/tfidf_path
+hadoop fs -rm -r -f /user/cloudera/interim_path
+Also, just to be sure, delete the build folder or use a new different build folder to store compiled files of each execution so that there's no conflicts from another compiled class

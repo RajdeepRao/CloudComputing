@@ -1,0 +1,18 @@
+Name: Rajdeep Rao
+Email: rrao6@uncc.edu
+
+I have used cloudera to implement this assignment.
+
+The submission contains 1 .java files. 
+-Driver.java
+
+All my other classes are inside it
+
+Instructions to execute the codes (Same as the instructions in the cloudera wordcount tutorial):
+
+mkdir -p build
+javac -cp /usr/lib/hadoop/*:/usr/lib/hadoop-mapreduce/* <File_name>.java -d build -Xlint 
+jar -cvf <jar_name>.jar -C build/ .
+hadoop jar <jar_name>.jar org.myorg.<File_name> /user/cloudera/pagerank/input /user/cloudera/pagerank/output 
+
+Running the one driver class by providing the input path and output path should be everything that needs to be done
